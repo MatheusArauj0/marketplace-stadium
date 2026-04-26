@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="marketplace-shared" />
+        <module name="marketplace-user (6)" />
+        <module name="marketplace-user (4)" />
+        <module name="marketplace-app" />
+      </profile>
+      <profile name="Annotation profile for marketplace" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+        </processorPath>
+        <module name="marketplace-user (2)" />
+        <module name="marketplace-user (1)" />
+        <module name="marketplace-user (5)" />
+        <module name="marketplace-user (3)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="marketplace-checkout" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

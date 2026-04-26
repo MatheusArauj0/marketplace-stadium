@@ -1,0 +1,5 @@
+com\example\marketplace\infrastructure\controller\CartController.class
+com\example\marketplace\MarketplaceApplication.class
+com\example\marketplace\infrastructure\controller\CategoryController.class
+com\example\marketplace\infrastructure\controller\UserControler.class
+com\example\marketplace\infrastructure\controller\ProductController.class
