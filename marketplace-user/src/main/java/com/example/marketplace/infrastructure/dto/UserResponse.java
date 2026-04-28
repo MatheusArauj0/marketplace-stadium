@@ -3,6 +3,7 @@ package com.example.marketplace.infrastructure.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -14,5 +15,4 @@ public class UserResponse {
     private String lastName;
     private String email;
     private String document;
-    private String password;
-}
+    private Set<String> rol
