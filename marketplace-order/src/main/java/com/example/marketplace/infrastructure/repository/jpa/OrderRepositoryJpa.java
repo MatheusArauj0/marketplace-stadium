@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -24,6 +25,18 @@ public class OrderRepositoryJpa {
     }
 
     public List<OrderEntity> findByUserId(UUID userId) {
-        return repository.findByUserId(userId);
+        return repository.findByUserIdOrderByCreatedAtDesc(userId);
+    }
+
+    public Optional<OrderEntity> findByIdAndUserId(UUID id, UUID userId) {
+        return repository.findByIdAndUserId(id, userId);
+    }
+
+    public Optional<OrderEntity> findByPickupCode(String pickupCode) {
+        return repository.findByPickupCode(pickupCode);
+    }
+
+    public OrderEntity save(OrderEntity entity) {
+        return repository.save(entity);
     }
 }

@@ -24,4 +24,30 @@ import java.util.UUID;
 @Entity
 @Table(name = "tb_order_item")
 @NoArgsConstructor
-@AllArgsConstr
+@AllArgsConstructor
+public class OrderItemEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @EqualsAndHashCode.Include
+    @Column(updatable = false, nullable = false)
+    private UUID id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
+    private OrderEntity order;
+
+    @Column(nullable = false)
+    private UUID productId;
+
+    @Column(nullable = false)
+    private String productName;
+
+    private String productImgUrl;
+
+    @Column(nullable = false)
+    private Integer quantity;
+
+    @Column(nullable = false, precision = 12, scale = 2)
+    private BigDecimal price;
+}
