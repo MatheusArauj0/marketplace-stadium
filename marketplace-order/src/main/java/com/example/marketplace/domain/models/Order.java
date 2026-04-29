@@ -21,12 +21,21 @@ public class Order {
     private List<OrderItem> items;
     private BigDecimal total;
     private OrderStatus status;
+    private String pickupCode;
 
     public Order(UUID userId, List<OrderItem> items, OrderStatus orderStatus) {
         this.userId = userId;
         this.items = items;
         this.total = calculateTotal(items);
         this.status = orderStatus;
+    }
+
+    public Order(UUID userId, List<OrderItem> items, OrderStatus orderStatus, String pickupCode) {
+        this.userId = userId;
+        this.items = items;
+        this.total = calculateTotal(items);
+        this.status = orderStatus;
+        this.pickupCode = pickupCode;
     }
 
     public BigDecimal calculateTotal(List<OrderItem> items) {

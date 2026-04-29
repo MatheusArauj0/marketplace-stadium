@@ -51,6 +51,9 @@ public class SecurityConfig {
                         // Pedidos — autenticado
                         .requestMatchers("/api/v1/order/**").authenticated()
 
+                        // Wallet — autenticado
+                        .requestMatchers("/api/v1/wallet/**").authenticated()
+
                         // Usuários — ADMIN para listagem, autenticado para ver próprio perfil
                         .requestMatchers(HttpMethod.GET, "/api/v1/users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/v1/users/{id}").authenticated()

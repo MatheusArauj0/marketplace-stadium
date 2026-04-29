@@ -14,8 +14,15 @@ spring:
 
   h2:
     console:
-      enabled: true         # habilita o console
+      enabled: true
       path: /h2-console
+
+# JWT Configuration
+jwt:
+  # Base64-encoded 256-bit secret — TROCAR EM PRODUÇÃO
+  secret: dGhpc0lzQVN1cGVyU2VjcmV0S2V5Rm9ySldUVG9rZW5TaWduaW5nMTIzNDU2Nzg5MA==
+  access-token-expiration-ms: 900000        # 15 minutos
+  refresh-token-expiration-ms: 604800000    # 7 dias
 
 management:
   endpoints:
@@ -25,5 +32,6 @@ management:
   endpoint:
     health:
       show-details: 'always'
+
 server:
   port: 8080

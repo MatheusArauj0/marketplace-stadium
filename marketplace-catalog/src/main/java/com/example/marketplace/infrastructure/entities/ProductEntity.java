@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,32 +30,41 @@ import java.util.UUID;
 @Table(name = "tb_product")
 @NoArgsConstructor
 @AllArgsConstructor
-public class  ProductEntity implements Serializable {
-  private static final long serialVersionUID = 1L;
+public class ProductEntity implements Serializable {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
-  @Column(updatable = false, nullable = false)
-  private UUID id;
+    private static final long serialVersionUID = 1L;
 
-  private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @EqualsAndHashCode.Include
+    @Column(updatable = false, nullable = false)
+    private UUID id;
 
-  @Column(columnDefinition = "TEXT")
-  private String description;
+    private String name;
 
-  private BigDecimal price;
-  private String imgUrl;
-  private String qrCode;
-  private Long quantidade;
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
-  @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-  private Instant date;
+    @Column(nullable = false, precision = 12, scale = 2)
+    private BigDecimal price;
 
-  @ManyToMany
-  @JoinTable(
-          name = "tb_product_category",
-          joinColumns = @JoinColumn(name = "product_id"),
-          inverseJoinColumns = @JoinColumn(name = "category_id")
-  )
-  private Set<CategoryEntity> categories = new HashSet<>();
+    private String imgUrl;
+    private String qrCode;
+
+    @Column(nullable = false)
+    private Long quantidade;
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private Instant date;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tb_product_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private Set<CategoryEntity> categories = new HashSet<>();
+
+    @Version
+    private Long version;
 }
