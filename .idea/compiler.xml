@@ -8,8 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="marketplace-shared" />
-        <module name="marketplace-user (6)" />
-        <module name="marketplace-user (4)" />
         <module name="marketplace-app" />
       </profile>
       <profile name="Annotation profile for marketplace" enabled="true">
@@ -25,9 +23,7 @@
         <module name="marketplace-user (5)" />
         <module name="marketplace-user (3)" />
       </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="marketplace-checkout" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
-</project>
+      <profile name="Annotation profile for marketplace-user (4)" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativ
