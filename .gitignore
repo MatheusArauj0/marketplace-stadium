@@ -1,0 +1,9 @@
+# ====== Backend (Java/Spring) ======
+backend/target/
+backend/**/target/
+*.class
+*.jar
+*.war
+
+# ====== Frontend (Next.js) ======
+frontend/node_module
